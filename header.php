@@ -2,8 +2,17 @@
 // require_once($_SERVER['DOCUMENT_ROOT'].'/demo_cavex/'.'routes.php');
 require_once($aRoutes['paths']['config'].'bs_functions_generals.php');
 require_once($aRoutes['paths']['config'].'bs_login.php');
+require_once($aRoutes['paths']['config'].'bs_model.php');
 $oLogin = new BSLogin();
 $oLogin->ExistAnySession();
+$oModel = new BSModel();
+$query_title = "SELECT * from titulo_cavex order by fecha_hora desc limit 1;";
+$aTitle = $oModel->Select($query_title);
+$title_cavex = 'Cavex';
+if(!empty($aTitle)){
+	$title_cavex = $aTitle[0]['texto'];
+}
+
 
 ?>
 
@@ -28,7 +37,7 @@ $oLogin->ExistAnySession();
 			    <div id="title-nav"><a href="/cavex_monitoring_system">Cavex Control System</a></div>
 			    <div id="bar-two"></div>
 			    <div id="bar-three"></div>
-			    <div id="enterprise-nav">Cavex Escondida</div>
+			    <div id="enterprise-nav"><?=$title_cavex?></div>
 			    <div id="date-nav"><?=date('F /d/Y')?></div>
 			    <div class="logo_weir"><img src="assets/img/WeirMinerals.png"></div>
 			</div>
@@ -59,6 +68,9 @@ $oLogin->ExistAnySession();
 								<li><a href="users.php">User Management</a></li>
 						  	</ul> 
 						  </li>
+					  <?php } ?>
+					  <?php if($_SESSION['usertype'] == 1){?>
+					  	<li><a href="/cavex_monitoring_system/change_title.php">Change title</a></li>
 					  <?php } ?>
 					  <li class="dropdown">
 					  	<a class="dropdown-toggle" data-toggle="dropdown" href="#"><?=$_SESSION['username']?><b class="caret"></b></a>

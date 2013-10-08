@@ -77,10 +77,10 @@ $is_update = $_GET['update_radio'];
 				      <td>
 				      		<div class="edit_div">
 				      			<a href="edit_radio.php?radio_id=<?=$radio['radio_id']?>&n_radio=<?=$i?>">
-									<img src="assets/img/Text-Edit-icon.png" alt="edit user" width="25" height="25" title="edit user">
+									<img src="assets/img/Text-Edit-icon.png" alt="edit user" width="25" height="25" title="Edit radio">
 								</a>
 				      		</div>					
-							<a href="delete_radio.php?radio_id=<?=$radio['radio_id']?>" onclick="return confirm('Are you ABSOLUTELY sure?')"><img src="assets/img/DeleteRed.png" alt="delete user" width="25" height="25" title="delete user"></a>
+							<a href="delete_radio.php?radio_id=<?=$radio['radio_id']?>" onclick="return confirm('Are you ABSOLUTELY sure?')"><img src="assets/img/DeleteRed.png" alt="delete user" width="25" height="25" title="Delete radio"></a>
 			      	  </td>
 				    </tr>
 				    <?php $i = $i + 1;?>

@@ -256,8 +256,8 @@ h2{
 
 .gauge{
     /*border: solid green;*/
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     position: absolute;
     /*float: inherit;*/
 }
@@ -293,107 +293,41 @@ h2{
 }
 
 #gauge1{
-    top: 120px;
-    left: 380px;
+    top: 240px;
+    left: 300px;
 }
 
 #link-status1{
-   top: 255px;
-   left: 400px; 
+   top: 410px;
+   left: 340px; 
    display: none;
 }
 
 #msg1{
-    top:180px;
-    left: 300px;
+    top:280px;
+    left: 230px;
     display: none;
 }
 
 
 #gauge2{
-    top: 120px;
-    right: 380px;
+    top: 240px;
+    right: 300px;
 }
 
 #link-status2{
-   top: 255px;
-   right: 355px; 
+   top: 410px;
+   right: 290px; 
    display: none;
 }
 
 #msg2{
-    top:180px;
-    right: 300px;
+    top:280px;
+    right: 230px;
     display: none;
 }
 
-#gauge3{
-    top: 320px;
-    left: 300px;
-}
 
-#link-status3{
-   top: 455px;
-   left: 320px; 
-   display: none;
-}
-
-#msg3{
-    top:390px;
-    left : 220px;
-    display: none;
-}
-
-#gauge4{
-    top: 320px;
-    right: 300px;
-}
-
-#link-status4{
-   top: 455px;
-   right: 275px; 
-   display: none;
-}
-
-#msg4{
-    top:390px;
-    right : 220px;
-    display: none;
-}
-
-#gauge5{
-    top: 480px;
-    left: 380px;
-}
-
-#link-status5{
-   top: 615px;
-   left: 405px; 
-   display: none;
-}
-
-#msg5{
-    top:550px;
-    left: 300px;
-    display: none;
-}
-
-#gauge6{   
-    top: 480px;
-    right: 380px;
-}
-
-#link-status6{
-   top: 615px;
-   right: 355px; 
-   display: none;
-}
-
-#msg6{
-    top:550px;
-    right: 300px;
-    display: none;
-}
 
 
 /* MENU */
@@ -955,4 +889,12 @@ ul.letter{
     margin-top: -30px;
 
     /*position: absolute;*/
+}
+
+
+/*  CHANGE TITLE */
+
+#label_change_title{
+    margin-left: 50px !important;
+    margin-right: 10px;
 }

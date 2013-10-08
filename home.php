@@ -7,6 +7,7 @@ $oLogin = new BSLogin();
 $oLogin->IsLogged("admin","supervisor");
 
 $save_password = $_GET['save_password'];
+$save_title = $_GET['save_title'];
 
 // $query_reader = "SELECT * from estado_lector order by fecha_hora desc limit 1;";
 // $oModel = new BSModel();
@@ -25,6 +26,11 @@ $save_password = $_GET['save_password'];
 	<?php if($save_password === 'true') { ?>
 		<div class="alert alert-success msg-action" style="text-align:center;">
 	    	Successful change password
+	  	</div>
+	<?php } ?>
+	<?php if($save_title === 'true') { ?>
+		<div class="alert alert-success msg-action" style="text-align:center;">
+	    	Successful change title
 	  	</div>
 	<?php } ?>
 	<div class="row">
