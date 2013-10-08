@@ -10,7 +10,7 @@ class BSConnection extends PDO
 
 	private $m_strDNS = "mysql";
 	private $m_strHostname = "localhost";
-	private $m_strDatabase = "demo_cavex";
+	private $m_strDatabase = "cavex_monitoring_system";
 	private $m_strUsername = "root";
 	private $m_strPassword = "legend";
 
