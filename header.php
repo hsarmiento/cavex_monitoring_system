@@ -29,6 +29,7 @@ if(!empty($aTitle)){
 		<script type="text/javascript" src="<? echo $aRoutes['paths']['js']?>jquery-ui-1.10.3.custom.min.js"></script>
 		<script type="text/javascript" src="<? echo $aRoutes['paths']['js']?>bootstrap.js"></script>
 		<script type="text/javascript" src="<? echo $aRoutes['paths']['js']?>jquery.validate.js"></script>
+		<script type="text/javascript" src="<? echo $aRoutes['paths']['js']?>jquery-ui-timepicker-addon.js"></script>
 	</head>
 	<body>
 		<header>
@@ -66,6 +67,13 @@ if(!empty($aTitle)){
 							<ul class="dropdown-menu">
 								<li><a href="create_user.php">Create user</a></li>
 								<li><a href="users.php">User Management</a></li>
+						  	</ul> 
+						  </li>
+						  <li class="dropdown">
+						  	<a class="dropdown-toggle" data-toggle="dropdown" href="#">Report<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="rms_report.php">Rms report</a></li>
+								<li><a href="alarm_event_report.php">Alarm & event report</a></li>
 						  	</ul> 
 						  </li>
 					  <?php } ?>
