@@ -2,10 +2,6 @@
 
 require_once(dirname(__FILE__).'/config/bs_model.php');
 require_once 'inc/PHPExcel.php';
-$oModel = new BSModel();
-$query_rms_report = "SELECT * from rms order by fecha_hora desc limit 10";
-$aRmsReport = $oModel->Select($query_rms_report);
-$objPHPExcel = new PHPExcel();
 
 $oModel = new BSModel();
 $from_datetime = $_GET['from_datetime'];

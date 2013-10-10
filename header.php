@@ -73,7 +73,6 @@ if(!empty($aTitle)){
 						  	<a class="dropdown-toggle" data-toggle="dropdown" href="#">Report<b class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<li><a href="rms_report.php">Rms report</a></li>
-								<li><a href="alarm_event_report.php">Alarm & event report</a></li>
 						  	</ul> 
 						  </li>
 					  <?php } ?>

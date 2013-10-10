@@ -6,6 +6,12 @@ $oLogin = new BSLogin();
 $oLogin->IsLogged("admin","supervisor");
 $checked_all = 'checked="checked"';
 $filter_form = $_POST;
+// print_r($filter_form);
+// if($filter_form['save-filter'] == 'Filter'){
+// 	echo 'SAVE';
+// }elseif($filter_form['generate-report'] == 'Export'){
+// 	echo 'EXPORT';
+// }
 if($filter_form['save-filter'] == 'Filter'){
 	if($filter_form['all'] == 'on' || (empty($filter_form['all']) && empty($filter_form['hyd']) && empty($filter_form['rad']) && empty($filter_form['user']) && empty($filter_form['sys']))){
 		if(!empty($filter_form['from_date']) and !empty($filter_form['to_date'])){
@@ -67,6 +73,16 @@ if($filter_form['save-filter'] == 'Filter'){
 			$aEvents = $oModel->Select($query);
 		}
 	}
+
+}elseif($filter_form['generate-report'] == 'Export'){
+	$filter_all = $filter_form['all'];
+	$filter_hyd = $filter_form['hyd'];
+	$filter_rad = $filter_form['rad'];
+	$filter_user = $filter_form['user'];
+	$filter_sys = $filter_form['sys'];
+	$from_date= $filter_form['from_date'];
+	$to_date = $filter_form['to_date'];
+	header("Location: generate_alarm_event_report.php?filter_all=$filter_all&filter_hyd=$filter_hyd&filter_rad=$filter_rad&filter_user=$filter_user&filter_sys=$filter_sys&from_date=$from_date&to_date=$to_date");
 }else{
 	$oModel = new BSModel();
 	$query = "SELECT radios.id as radio_id, radios.identificador as identificador, radios.mac as mac, eventos_alarmas.tipo as tipo, eventos_alarmas.fecha_hora as fecha_hora from eventos_alarmas left join radios on eventos_alarmas.radio_id = radios.id order by fecha_hora desc;";
@@ -114,6 +130,9 @@ if($filter_form['save-filter'] == 'Filter'){
 		   		</div>
 		   		<div class="single-checkbox">
 		      		<input class="btn btn-primary" type="submit" name="save-filter" id="save-filter" value="Filter"> 
+		   		</div>
+		   		<div class="single-checkbox">
+		      		<input class="btn btn-primary" type="submit" name="generate-report" id="generate-report" value="Export"> 
 		   		</div>
   			</div>
 		</form>

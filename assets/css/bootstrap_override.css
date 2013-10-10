@@ -799,15 +799,19 @@ input[type="text"].error{
 .single-checkbox{
     padding: 15px;
     max-width: 150px;
-    min-width: 50px;
+    /*min-width: 50px;*/
     /*max-width: 200px;*/
-    margin-right: 20px;
+    margin-right: 10px;
     margin-left: 10px;
     display: inline-block;
     /*padding-right: 200px;*/
 }
 
 #save-filter{
+    margin-top: -15px;
+}
+
+#generate-report{
     margin-top: -15px;
 }
 
@@ -903,4 +907,18 @@ ul.letter{
 #label_change_title{
     margin-left: 50px !important;
     margin-right: 10px;
+}
+
+
+/* RMS REPORT */
+
+.box-report{
+    width: 50%;
+    margin: 0 auto;
+    padding: 30px 10px 10px 40px;
+}
+
+#generate-rms-report{
+    margin-top: -22px;
+    margin-left: 25px;
 }
