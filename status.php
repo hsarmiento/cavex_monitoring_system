@@ -84,6 +84,7 @@ $sd_ropping = ($sd)*(1+$aParametros[0]['sd_ropping_porcentaje']/100);
         <div id="gauge_rms" class="gauge-status"></div>
         <div class="span3 form-chart">
           <h4>RMS chart configuration</h4>
+          <div id="value_rms_conf">Enter a value between 0 to 200</div>
           <form  id="rms_set_chart" method="post" name="rms_set_chart" action="status.php?radio_id=<?=$radio_id?>&n_radio=<?=$n_radio?>" enctype="multipart/form-data">
             <div class="controls controls-row">
               <label class="span1" for="rms_min_chart">Min chart value</label>
@@ -108,6 +109,7 @@ $sd_ropping = ($sd)*(1+$aParametros[0]['sd_ropping_porcentaje']/100);
         <div id="gauge_sd" class="gauge-status"></div>
           <div class="span3 form-chart">
             <h4>SD chart configuration</h4>
+            <div id="value_sd_conf">Enter a value between 0 to 200</div>
             <form  id="sd_set_chart" method="post" name="sd_set_chart" action="status.php?radio_id=<?=$radio_id?>&n_radio=<?=$n_radio?>" enctype="multipart/form-data">
               <div class="controls controls-row">
                 <label class="span1" for="sd_min_chart">Min chart value</label>
@@ -133,6 +135,64 @@ $sd_ropping = ($sd)*(1+$aParametros[0]['sd_ropping_porcentaje']/100);
 
 
 <script type="text/javascript">
+  $("#rms_set_chart").validate({
+    rules:{
+      rms_min_chart:{
+        required: true,
+        min: 0,
+        max: 200,
+        number: true
+      },
+      rms_max_chart:{
+        required: true,
+        min: 0,
+        max: 200,
+        number: true
+      }
+    },
+    invalidHandler: function(form){
+        alert('Enter a value between 0 to 200'); // for demo
+              return false; // for demo
+      },
+          highlight: function(element, errorClass, validClass) {
+          $(element).addClass(errorClass).removeClass(validClass);
+        },
+       unhighlight: function(element, errorClass, validClass) {
+          $(element).removeClass(errorClass).addClass(validClass);
+        },
+        errorPlacement: function(error, element) {      
+          }
+  });
+
+  $("#sd_set_chart").validate({
+    rules:{
+      sd_min_chart:{
+        required: true,
+        min: 10,
+        max: 200,
+        number: true
+      },
+      sd_max_chart:{
+        required: true,
+        min: 10,
+        max: 200,
+        number: true
+      }
+    },
+    invalidHandler: function(form){
+        alert('Enter a value between 0 to 200'); // for demo
+              return false; // for demo
+      },
+          highlight: function(element, errorClass, validClass) {
+          $(element).addClass(errorClass).removeClass(validClass);
+        },
+       unhighlight: function(element, errorClass, validClass) {
+          $(element).removeClass(errorClass).addClass(validClass);
+        },
+        errorPlacement: function(error, element) {      
+          }
+  });
+
   $(function () {
       $(document).ready(function() {
           Highcharts.setOptions({

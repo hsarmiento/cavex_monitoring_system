@@ -922,3 +922,32 @@ ul.letter{
     margin-top: -22px;
     margin-left: 25px;
 }
+
+.error_rms_min_chart{
+    position: absolute;
+    top: 150px;
+    border: 1px blue solid;
+    width: 200px;
+    left: 50px;
+}
+
+#value_gauge_conf{
+    width: 200px;
+    margin: -5px 40px 10px -10px;
+    font-size: 12px;
+    color:#818181;
+}
+
+#value_rms_conf{
+    width: 200px;
+    margin: -5px 40px 10px 10px;
+    font-size: 12px;
+    color:#818181;
+}
+
+#value_sd_conf{
+    width: 200px;
+    margin: -5px 40px 10px 10px;
+    font-size: 12px;
+    color:#818181;
+}

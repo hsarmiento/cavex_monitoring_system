@@ -35,7 +35,7 @@ if(!empty($aTitle)){
 		<header>
 			<div id="nav-header">
 			    <div id="bar-one"></div>
-			    <div id="title-nav"><a href="/cavex_monitoring_system">Cavex Control System</a></div>
+			    <div id="title-nav"><a href="/cavex_monitoring_system/home.php">Cavex Control System</a></div>
 			    <div id="bar-two"></div>
 			    <div id="bar-three"></div>
 			    <div id="enterprise-nav"><?=$title_cavex?></div>

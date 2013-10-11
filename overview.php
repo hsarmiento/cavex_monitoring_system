@@ -75,6 +75,7 @@
 		<div id="container-help-overview">
 			<div class="span3 form-chart">
 	            <h4>Gauge configuration</h4>
+	            <div id="value_gauge_conf">Enter a value between 0 to 200</div>
 	            <form  id="rms_set_chart" method="post" name="rms_set_chart" action="overview.php" enctype="multipart/form-data">
 	              <div class="controls controls-row">
 	                <label class="span1" for="rms_min_chart">Min value</label>
@@ -113,7 +114,35 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/cavex_monitoring_system/'.'footer.php')
 			$("#container-help-overview").toggle("slide", {direction: "right"}, 100);	
 			$('#wrapper-help-overview').fadeOut("fast");
 		}			
-		});
+	});
+	$("#rms_set_chart").validate({
+		rules:{
+			rms_min_chart:{
+				required: true,
+				min: 0,
+				max: 200,
+				number: true
+			},
+			rms_max_chart:{
+				required: true,
+				min: 0,
+				max: 200,
+				number: true
+			}
+		},
+		invalidHandler: function(form){
+				alert('Enter a value between 0 to 200'); // for demo
+            	return false; // for demo
+			},
+	        highlight: function(element, errorClass, validClass) {
+			    $(element).addClass(errorClass).removeClass(validClass);
+			  },
+			 unhighlight: function(element, errorClass, validClass) {
+			    $(element).removeClass(errorClass).addClass(validClass);
+			  },
+			  errorPlacement: function(error, element) {      
+        	}
+	});
 	<?php if($count_radios > 0){?>
 		
 		$(function () {
