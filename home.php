@@ -22,6 +22,9 @@ $save_title = $_GET['save_title'];
 
 ?>
 
+<link rel="stylesheet" href="<? echo $aRoutes['paths']['css']?>jquery-ui-1.10.3.custom.css">
+
+
 <div class="container container-body">
 	<?php if($save_password === 'true') { ?>
 		<div class="alert alert-success msg-action" style="text-align:center;">
@@ -33,6 +36,12 @@ $save_title = $_GET['save_title'];
 	    	Successful change title
 	  	</div>
 	<?php } ?>
+	<div id="info-help" class="help">
+		<br /> <br /> 
+		<strong>
+			I<br /> N<br />F<br />O<br />
+		</strong>	    
+	</div>
 	<div class="row">
 		<div class="span6"><div class="offset1"><img src="assets/img/bomba.png"></div></div>
 		<div class="span6 menu-buttons">
@@ -73,6 +82,45 @@ $save_title = $_GET['save_title'];
 	</div>
 </div>
 
+<div id="dialog" title="Cavex info">
+  <h4>Application</h4>
+  <ul>
+  	<li>
+  		Name: <?=$title_cavex?>
+  	</li>
+  	<li>
+  		Serial number: CCS10201300
+  	</li>
+  	<li>
+  		Date: <?=date('F Y')?>
+  	</li>
+  	<li>
+  		Date Tested: 2013/10/11
+  	</li>
+  	<li>
+  		License: 2 Transmitter units maximum
+  	</li>
+  	<li>
+  		Sensors: 2 Sensors maximum
+  	</li>
+  	<li>
+  		IP: 192.168.0.3
+  	</li>
+  </ul>
+  <h4>Contact</h4>
+  <ul>
+  	<li>
+  		Name: Javier López
+  	</li>
+  	<li>
+  		Phone: +56982321690
+  	</li>
+  	<li>
+  		Email: jlopez@weirminerals.cl
+  	</li>
+  </ul>
+</div>
+
 <script type="text/javascript">
 	$("#status-reader").click(function(){
 		if($(this).attr('class') == 'btn btn-default btn-success reader-running'){
@@ -94,7 +142,25 @@ $save_title = $_GET['save_title'];
 		}
 	});
 
-
+	$("#info-help").click(function(){
+		$( "#dialog" ).dialog({
+	      width: 500,
+	      modal: true,
+	      show: {
+		        effect: 'fade',
+		        duration: 500
+		    },
+		  hide: {
+		        effect: 'fade',
+		        duration: 500
+		    },
+	      buttons: {
+	        Close: function() {
+	          $( this ).dialog( "close" );
+	        }
+	      }
+	    });
+	});
 </script>
 
 

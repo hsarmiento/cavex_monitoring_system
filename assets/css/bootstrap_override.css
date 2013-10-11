@@ -951,3 +951,22 @@ ul.letter{
     font-size: 12px;
     color:#818181;
 }
+
+#info-help{
+    position: absolute;
+    width: 30px;
+    height: 180px;
+    border-radius: 2px;
+    right: 0px;
+    top: 200px;
+    /*left: 100px;*/
+    text-align: center;
+    background: #1E1A95; /* Old browsers */
+
+    border: 1px solid #b0b0b0;
+    color: white;
+}
+
+#dialog{
+    display: none;
+}
