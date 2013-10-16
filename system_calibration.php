@@ -60,9 +60,9 @@ $aRadios = $oRadios->Select($query_radios);
 							</div>
 							<div class="controls controls-row">
 							    <div id="rms_calibration<?=$i?>" class="current-value" ></div>
-							    <input type="text" id="radio[<?=$i?>][rms_normal]" class="calibration first-input required" name="radio[<?=$i?>][rms_normal]" value="<?=$radio['rms']?>"/>
-							    <input type="text" class="calibration second-input required" name="radio[<?=$i?>][rms_max_normal]" value="<?=$radio['rms_max_normal']?>" id="radio[<?=$i?>][rms_max_normal]"/>
-							    <input type="text" class="calibration third-input required" name="radio[<?=$i?>][rms_ropping]" id="radio[<?=$i?>][rms_ropping]" value="<?=$radio['rms_ropping']?>"/>
+							    <input type="text" id="radio[<?=$i?>][rms_normal]" class="calibration first-input required" name="radio[<?=$i?>][rms_normal]" value="<?=$radio['rms']?>" onkeypress="return isNumber(event)"/>
+							    <input type="text" class="calibration second-input required" name="radio[<?=$i?>][rms_max_normal]" value="<?=$radio['rms_max_normal']?>" id="radio[<?=$i?>][rms_max_normal]" onkeypress="return isNumber(event)"/>
+							    <input type="text" class="calibration third-input required" name="radio[<?=$i?>][rms_ropping]" id="radio[<?=$i?>][rms_ropping]" value="<?=$radio['rms_ropping']?>" onkeypress="return isNumber(event)"/>
 							</div>    		
 				    	</div>
 
@@ -76,9 +76,9 @@ $aRadios = $oRadios->Select($query_radios);
 							</div>
 							<div class="controls controls-row">
 							    <div id="sd_calibration<?=$i?>" class="current-value" ></div>
-							    <input type="text" class="calibration first-input required" name="radio[<?=$i?>][sd_normal]" value="<?=$radio['sd_normal']?>" id="radio[<?=$i?>][sd_normal]"/>
-							    <input type="text" class="calibration second-input required" name="radio[<?=$i?>][sd_max_normal]" value="<?=$radio['sd_max_normal']?>" id="radio[<?=$i?>][sd_max_normal]"/>
-							    <input type="text" class="calibration third-input required" name="radio[<?=$i?>][sd_ropping]" value="<?=$radio['sd_ropping']?>" id="radio[<?=$i?>][sd_ropping]"/>
+							    <input type="text" class="calibration first-input required" name="radio[<?=$i?>][sd_normal]" value="<?=$radio['sd_normal']?>" id="radio[<?=$i?>][sd_normal]" onkeypress="return isNumber(event)"/>
+							    <input type="text" class="calibration second-input required" name="radio[<?=$i?>][sd_max_normal]" value="<?=$radio['sd_max_normal']?>" id="radio[<?=$i?>][sd_max_normal]" onkeypress="return isNumber(event)"/>
+							    <input type="text" class="calibration third-input required" name="radio[<?=$i?>][sd_ropping]" value="<?=$radio['sd_ropping']?>" id="radio[<?=$i?>][sd_ropping]" onkeypress="return isNumber(event)"/>
 							</div>						   		
 				    	</div>
 					</div>	
@@ -129,6 +129,15 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/cavex_monitoring_system/'.'footer.php')
 ?>
 
 <script type="text/javascript">
+		function isNumber(evt) {
+	        evt = (evt) ? evt : window.event;
+	        var charCode = (evt.which) ? evt.which : evt.keyCode;
+	        if (charCode > 31 && (charCode < 46 || charCode > 57)) {
+	            return false;
+	        }
+        	return true;
+    }
+
 		$('#help').click(function(){
 			if($("#help").attr('class') == 'help'){
 				$('#wrapper-help').show();
@@ -145,7 +154,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/cavex_monitoring_system/'.'footer.php')
 
 	    $('#set_parametros_form').validate({
 	    	invalidHandler: function(form){
-				alert('Red inputs are empty'); // for demo
+				alert('Enter a number value'); // for demo
             	return false; // for demo
 			},
 	        highlight: function(element, errorClass, validClass) {
